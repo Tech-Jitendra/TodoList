@@ -6,9 +6,8 @@ import CreateTodo from './Pages/Todo/CreateTodo';
 import { Header } from './Component/Header';
 import { TodoList } from './Pages/Todo/TodoList';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { RootStoreType, RootStoreProvider, setupRootStore } from "./models";
+import { RootStoreType, RootStoreProvider, setupRootStore } from "./Models";
 
-// import { BrowserRouter as Router } from 'react-router-dom';
 
 import { About } from './Pages/About';
 import { NativeBaseProvider, theme } from 'native-base';
@@ -33,7 +32,7 @@ function App() {
     console.log(taskObj)
   }
   // let title = confirm('this')
-  const [rootStore, setRootStore] = useState < RootStoreType | undefined > (undefined);
+  const [rootStore, setRootStore] = useState(undefined);
 
   useEffect(() => {
     (async () => {

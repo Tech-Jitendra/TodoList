@@ -38,7 +38,7 @@
 
 .lnrgradient{
   min-height: 85vh;
-  background-image: linear-gradient(white, blue, white)
+  /* background-image: linear-gradient(white, blue, white) */
 }
 
 .wraping{
