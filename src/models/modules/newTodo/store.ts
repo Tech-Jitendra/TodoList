@@ -16,6 +16,7 @@ export const TodosStore = types
       return ACTION_RESPONSES.success;
     },
     createTodo: flow(function* (val: string) {
+      console.log("todos added to file", val)
       self.Todos.push({
         name: val
       });

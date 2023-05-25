@@ -8,8 +8,6 @@ export const TodoList = (props) => {
             <div className="">
                 {props.todos.length === 0 ? "No Todos to display" : props.todos.map((todo) => {
                     return (
-                        // <PrintTodos todo={todo}
-                        // />
                         <CardComponent
                             title={todo.name}
                             description={todo.description}
