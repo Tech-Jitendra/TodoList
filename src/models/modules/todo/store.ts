@@ -1,6 +1,6 @@
 import { types, flow } from "mobx-state-tree";
 import { withEnvironment } from "../../extensions/with-environment";
-import * as SCHEMAS from "./schemas";
+import * as SCHEMAS from "./schema";
 import { ACTION_RESPONSES } from "../../api/endpoint.types";
 
 export const TodosStore = types
