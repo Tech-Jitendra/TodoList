@@ -1,5 +1,5 @@
 import { onSnapshot } from "mobx-state-tree";
-import { RootStoreModel, RootStore } from "./root-store";
+import { RootStoreModel, RootStoreType } from "./root-store";
 import { Environment } from "../environment";
 import * as storage from "localforage";
 //import * as storage from "../../utils/mobile-storage"
@@ -26,7 +26,7 @@ export async function createEnvironment() {
  * Setup the root state.
  */
 export async function setupRootStore() {
-  let rootStore: RootStore;
+  let rootStore: RootStoreType;
   let data: any;
 
   // prepare the environment that will be associated with the RootStore.

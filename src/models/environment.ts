@@ -1,6 +1,6 @@
-import { Api } from "./api"
-import globalKeyStore from "./api/global-key-store"
-import {globalKeyStoreObjectType} from "./api/global-key-store"
+import { Api } from "../Models/api"
+import globalKeyStore from "../Models/api/global-key-store"
+import {globalKeyStoreObjectType} from "../Models/api/global-key-store"
 /**
  * The environment is a place where services and shared dependencies between
  * models live.  They are made available to every model via dependency injection.

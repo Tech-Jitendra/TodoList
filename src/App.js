@@ -40,17 +40,6 @@ function App() {
       setupRootStore().then(setRootStore);
     })();
   }, []);
-  // if (!rootStore) return null;
-  // if (rootStore.i18nStore.appLanguage)
-  //   i18nx.locale = rootStore.i18nStore.appLanguage;
-  // else {
-  //   rootStore.i18nStore.setSystemDefault();
-  // }
-  // if (rootStore.i18nStore.appLanguage)
-  //   i18nx.locale = rootStore.i18nStore.appLanguage;
-  // else {
-  //   rootStore.i18nStore.setSystemDefault();
-  // }
   return (
     <>
       <RootStoreProvider value={rootStore}>
