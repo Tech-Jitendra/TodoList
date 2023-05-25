@@ -1,35 +1,32 @@
-import { types ,onSnapshot } from "mobx-state-tree";
-import { todoList } from "./schema";
+import { types, flow } from "mobx-state-tree";
+import { withEnvironment } from "../../extensions/with-environment";
+import * as SCHEMAS from "./schemas";
+import { ACTION_RESPONSES } from "../../api/endpoint.types";
 
-const todo = types
+export const TodosStore = types
   .model({
-    tododata: types.array(todoList),
+    todosPaginated: types.maybeNull(SCHEMAS.TodosPaginated),
+    Todos: types.array(SCHEMAS.Todos),
+    completedTodos: types.array(SCHEMAS.Todos)
   })
+  .extend(withEnvironment)
   .actions((self) => ({
-    addTodo(val: string) {
-      self.tododata.push({
-        name: val,
+    removeTodo(val: number) {
+      self.Todos.splice(val, 1)
+      return ACTION_RESPONSES.success;
+    },
+    createTodo: flow(function* (val: string) {
+      self.Todos.push({
+        name: val
       });
-    },
-    removeTodo(val: string) {
-      // const data = JSON.stringify(self.tododata);
-      //  data.filter((item) => item.id !== val)
-      self.tododata.splice(
-        self.tododata.findIndex((a) => a.name === val),
-        1
-      );
-    },
-  }));
-
-
-export const TODO = todo.create({});
-
-// onSnapshot(TODO, (snapshot) => {
-//   localStorage.setItem('todoStoreSnapshot', JSON.stringify(snapshot));
-// });
-
-// const savedSnapshot = localStorage.getItem('todoStoreSnapshot');
-// if (savedSnapshot) {
-//   const snapshot = JSON.parse(savedSnapshot);
-//   TODO.replace(snapshot);
-// }
+      return ACTION_RESPONSES.success;
+    }),
+  })).actions((self) => ({
+    completeTodo: flow(function* (val: string, id: number) {
+      self.completedTodos.push({
+        name: val
+      });
+      self.removeTodo(id)
+      return ACTION_RESPONSES.success;
+    }),
+  }))
