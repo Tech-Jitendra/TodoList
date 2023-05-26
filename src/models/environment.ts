@@ -1,6 +1,6 @@
-import { Api } from "../Models/api"
-import globalKeyStore from "../Models/api/global-key-store"
-import {globalKeyStoreObjectType} from "../Models/api/global-key-store"
+import { Api } from "../models/api"
+import globalKeyStore from "../models/api/global-key-store"
+import { globalKeyStoreObjectType } from "../models/api/global-key-store"
 /**
  * The environment is a place where services and shared dependencies between
  * models live.  They are made available to every model via dependency injection.
@@ -9,7 +9,7 @@ export class Environment {
   constructor() {
     // create each service
     this.api = new Api()
-    this.globalKeyStore=globalKeyStore
+    this.globalKeyStore = globalKeyStore
   }
 
   async setup() {
@@ -20,5 +20,5 @@ export class Environment {
    * Our api.
    */
   api: Api
-  globalKeyStore:globalKeyStoreObjectType
+  globalKeyStore: globalKeyStoreObjectType
 }

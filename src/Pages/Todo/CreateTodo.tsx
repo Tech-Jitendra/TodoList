@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { useStores } from '../../Models';
+import { useStores } from '../../models';
 
 const CreateTodo = props => {
-    const {  } = useStores()
+    const { } = useStores()
     const [description, setDescription] = useState('')
     const [title, setTitle] = useState("");
 
