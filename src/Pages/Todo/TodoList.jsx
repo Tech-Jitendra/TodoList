@@ -12,7 +12,7 @@ export const TodoList = () => {
     }, [])
     return (
         <div className='lnrgradient'>
-            <div className="">
+            <div className="mx-5 d-flex gap-5 flex-wrap">
                 {data.length === 0 ? "No Todos to display" : data.map((todo) => {
                     return (
                         <CardComponent

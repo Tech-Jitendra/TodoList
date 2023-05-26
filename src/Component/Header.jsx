@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export const Header = () => {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary container bg-danger">
+        <nav className="navbar navbar-expand-lg bg-body-tertiary container">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">Navbar</a>
                 <button className="navbar-toggler"

@@ -23,26 +23,24 @@ const CreateTodo = props => {
     };
 
     return (
-        <div className='lnrgradient' >
-            <div className='App App-header lnrgradient'>
-                <form>
-                    <div>
-                        <label htmlFor="title">Title</label>
-                        <input type="text" id='title' name="title" value={title}
-                            onChange={(e) => { setTitle(e.target.value) }} className="form-control" />
-                    </div><br />
+        <div className='justify-content-center d-flex '>
+            <form className='form-control w-50 h-75 shadow'>
+                <div className='my-3'>
+                    <label htmlFor="title">Title</label>
+                    <input type="text" id='title' name="title" value={title}
+                        onChange={(e) => { setTitle(e.target.value) }} className="form-control" />
+                </div>
 
-                    <div>
-                        <label htmlFor="desc">Description</label>
-                        <textarea name="description" value={description} id="desc"
-                            onChange={(e) => setDescription(e.target.value)} rows={2} className="form-control" />
-                    </div><br />
+                <div className='my-3'>
+                    <label htmlFor="desc">Description</label>
+                    <textarea name="description" value={description} id="desc"
+                        onChange={(e) => setDescription(e.target.value)} rows={2} className="form-control" />
+                </div>
 
-                    <div>
-                        <button onClick={addList} className='btn btn-outline-primary text-dark'>Add your title</button>
-                    </div>
-                </form>
-            </div>
+                <div className='my-3'>
+                    <button onClick={addList} className='btn btn-outline-primary text-dark'>Add your title</button>
+                </div>
+            </form>
         </div>
     )
 }
