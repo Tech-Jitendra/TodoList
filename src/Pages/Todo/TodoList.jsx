@@ -1,12 +1,19 @@
 import React from 'react'
-import PrintTodos from './PrintTodos';
 import { CardComponent } from "./../../Component/Card"
+import { useStores } from '../../models';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
-export const TodoList = (props) => {
+export const TodoList = () => {
+    const [data, setData] = useState([])
+    const store = useStores()
+    useEffect(() => {
+        setData(store.todosStore.Todos)
+    }, [])
     return (
         <div className='lnrgradient'>
             <div className="">
-                {props.todos.length === 0 ? "No Todos to display" : props.todos.map((todo) => {
+                {data.length === 0 ? "No Todos to display" : data.map((todo) => {
                     return (
                         <CardComponent
                             title={todo.name}

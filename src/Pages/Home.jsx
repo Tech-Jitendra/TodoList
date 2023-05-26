@@ -1,12 +1,22 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom';
+import { About } from './About';
+import { Header } from "./../Component/Header";
+import CreateTodo from "./Todo/CreateTodo"
+import { TodoList } from "./Todo/TodoList"
+import { observer } from 'mobx-react-lite';
 
-export const Home = () => {
+const Home = () => {
     return (
-        <div className='lnrgradient'>
-            <div className='App App-header lnrgradient'>
-                <h1>Welcome,<i>  Dude</i></h1>
-                <h2>I'm rendering Home</h2>
-            </div>
-        </div>
+        <>
+            <Header />
+            <Routes>
+                <Route path='/about' element={< About />} />
+                <Route path='/create' element={<CreateTodo />} />
+                <Route path='/print' element={<TodoList />} />
+            </Routes>
+        </>
     )
 }
+
+export default observer(Home);

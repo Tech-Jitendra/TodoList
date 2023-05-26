@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useStores } from '../../models';
 
 const CreateTodo = props => {
-    const { } = useStores()
+    const store = useStores()
     const [description, setDescription] = useState('')
     const [title, setTitle] = useState("");
 
@@ -12,11 +12,11 @@ const CreateTodo = props => {
             alert("Please enter something")
         }
         else {
-            // todosStore.createTodo(title).then((res) => {
-            //     if (res.ok) {
-            //         alert("todos addeds")
-            //     }
-            // })
+            store.todosStore.createTodo(title).then((res) => {
+                if (res.ok) {
+                    alert("todos addeds")
+                }
+            })
         }
         setTitle("");
         setDescription("");
