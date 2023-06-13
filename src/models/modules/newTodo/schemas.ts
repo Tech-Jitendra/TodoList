@@ -10,7 +10,8 @@ export const Action = types.model({
 
 export const Todos = types.model({
     name: types.string,
-    image: types.maybeNull(types.string)
+    image: types.maybeNull(types.string),
+    description: types.string
 })
 
 export interface TodosType extends Instance<typeof Todos> { }

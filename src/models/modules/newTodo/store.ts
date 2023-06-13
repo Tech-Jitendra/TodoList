@@ -15,10 +15,13 @@ export const TodosStore = types
       self.Todos.splice(val, 1)
       return ACTION_RESPONSES.success;
     },
-    createTodo: flow(function* (val: string) {
-      console.log("todos added to file", val)
+    createTodo: flow(function* (val: {
+      name: string,
+      description: string
+    }) {
       self.Todos.push({
-        name: val
+        name: val.name,
+        description: val.description
       });
       return ACTION_RESPONSES.success;
     }),

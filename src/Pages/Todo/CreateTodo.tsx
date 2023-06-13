@@ -6,13 +6,16 @@ const CreateTodo = props => {
     const [description, setDescription] = useState('')
     const [title, setTitle] = useState("");
 
-
     const addList = () => {
         if (title === '' && description === "") {
             alert("Please enter something")
         }
         else {
-            store.todosStore.createTodo(title).then((res) => {
+            let data = {
+                name: title,
+                description: description
+            }
+            store.todosStore.createTodo(data).then((res) => {
                 if (res.ok) {
                     alert("todos addeds")
                 }

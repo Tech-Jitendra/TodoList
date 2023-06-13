@@ -13,7 +13,7 @@ export const CardComponent = (props: {
     return (
         <React.Fragment>
             <Card
-                style={{ width: "400px" }}
+                style={{ width: "380px" }}
                 shadow="sm"
                 p="lg" radius="md"
                 withBorder>
