@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom';
-import { About } from './About';
+import { AboutEverthing } from './About';
 import { Header } from "./../Component/Header";
 import CreateTodo from "./Todo/CreateTodo"
 import { TodoList } from "./Todo/TodoList"
@@ -11,7 +11,7 @@ const Home = () => {
         <>
             <Header />
             <Routes>
-                <Route path='/about' element={< About />} />
+                <Route path='/about' element={<AboutEverthing />} />
                 <Route path='/create' element={<CreateTodo />} />
                 <Route path='/print' element={<TodoList />} />
             </Routes>

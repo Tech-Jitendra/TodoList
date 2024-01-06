@@ -83,7 +83,12 @@ export class API_ENDPOINT {
         const required_fields = ["url", "method", "response", "transformer"]
         var missing_fields = []
         required_fields.forEach((field) => {
-            field in init ? null : missing_fields.push(field)
+            if (field in init) {
+                return null
+            }
+            else {
+                missing_fields.push(field)
+            }
         })
         if (missing_fields.length > 0) {
             console.error(
@@ -162,7 +167,7 @@ export function transformObjectFromSchema(data: any, schema: IAnyModelType) {
 }
 export const generatedPaginatedActions = <Type>(model: IAnyModelType) => {
     return console.error("ROLLED BACK")
-    interface ArrayType extends Instance<Array<Type>> {}
+    interface ArrayType extends Instance<Array<Type>> { }
     return (self: any) => ({
         _replace(values: ArrayType): ArrayType {
             self.results.clear()

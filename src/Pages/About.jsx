@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const About = () => {
+export const AboutEverthing = () => {
     return (
         <div className='lnrgradient'>
             <div className='App App-header lnrgradient'>

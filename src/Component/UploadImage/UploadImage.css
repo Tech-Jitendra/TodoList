@@ -1,0 +1,146 @@
+img, svg {
+  vertical-align: middle;
+}
+
+.uploadOuter {
+  text-align: center;
+  padding: 20px;
+  width: auto;
+}
+
+.uploadOuter strong {
+  padding: 0px 10px;
+}
+.uploadOuter label{
+  width: auto;
+  max-width: 200px;
+
+}
+.video_heading{
+  white-space: normal;
+}
+
+.dragBox {
+  width: auto;
+  max-width: 200px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+  font-weight: bold;
+  line-height: 95px;
+  color: #999;
+  border: 2px dashed #ccc;
+  display: inline-block;
+  transition: transform 0.3s;
+  margin-top: .5rem;
+}
+
+.btn-costum {
+  background: linear-gradient(65deg, #d96980, #3d29a3);
+}
+
+.dragBox input[type="file"] {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+  left: 0;
+}
+
+.draging {
+  transform: scale(1.1);
+}
+
+#preview {
+  text-align: center;
+}
+
+#preview img {
+  max-width: 100%;
+}
+
+.center_anything {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: auto ;
+}
+
+/* Upload video CSS */
+.video-container {
+  display: flex;
+}
+
+.video-container video {
+  width: 100%;
+}
+
+.preview-column {
+  background-color: black;
+  flex-grow: 1;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.preview-video {
+  width: 100%;
+  height: auto;
+}
+
+.Recording_closebuttons {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+   height: 40px;
+  width: 40px; 
+  opacity: 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.closebuttons{
+  position: absolute;
+  right: 24px;
+  top: 45px;
+  height: 40px;
+  width: 40px;
+  opacity: 1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button.cloose{
+  background:none;
+  border: none;
+}
+
+.record_rightCol {
+  margin-top: -5%;
+}
+@media screen and (max-width: 768px) {
+  .record_rightCol {
+    margin-top: 5%;
+  }
+  .record_rightColBtn {
+    margin: 2%;
+  }
+}
+.Intor__Script {
+  background: white;
+  color: black;
+  border-radius: 1rem;
+  text-align: center;
+  margin-bottom: 10%;
+
+}
+.Intor__Script p{
+  font-size: 21px;
+  line-height: 26px;
+  padding: 20px;
+}
